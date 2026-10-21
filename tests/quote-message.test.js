@@ -1,0 +1,18 @@
+'use strict';
+const assert = require('node:assert/strict');
+const {buildQuoteMessage,createWhatsAppUrl,isValidClientPhone}=require('../docs/assets/quote-message.js');
+const data={project:'Planta & expansión #2',sector:'Industrial / Manufactura',location:'Santiago, República Dominicana',stage:'Ingeniería y diseño',modality:'Mixto',services:['Ingeniería de detalle','Gestión de ingeniería'],scope:'Revisión de tuberías y modelo 3D.\nPresión de diseño: por confirmar. Símbolos: + & # ✅',deliverables:['Planos / Isométricos','Modelo 3D / BIM'],deadline:'En 3 a 4 semanas',startDate:'2026-12-01',documents:'Planos y especificaciones',budget:'USD 3.000',clientName:'Cliente de prueba',company:'Empresa de prueba',clientPhone:'+1 (809) 000-0000',email:'qa@example.com'};
+const message=buildQuoteMessage(data);
+const url=new URL(createWhatsAppUrl('+1 (849) 652-0907',data));
+assert.equal(url.protocol,'https:');assert.equal(url.hostname,'wa.me');assert.equal(url.pathname,'/18496520907');assert.equal(url.searchParams.get('text'),message);
+for(const key of ['project','sector','location','stage','modality','scope','deadline','documents','budget','clientName','company','clientPhone','email'])assert.ok(message.includes(data[key]),key);
+for(const item of [...data.services,...data.deliverables])assert.ok(message.includes(item));
+assert.ok(message.includes('01/12/2026'));
+assert.ok(buildQuoteMessage({}).includes('Entregables: A coordinar'));
+assert.ok(buildQuoteMessage({}).includes('Correo: No indicado'));
+assert.throws(()=>createWhatsAppUrl('abc',data));
+for(const phone of ['+1 (809) 000-0000','18496520907','+34 600 123 456'])assert.ok(isValidClientPhone(phone));
+for(const phone of ['','123','abcdefghij','+1 809 example','1234567890123456','++18090000000'])assert.ok(!isValidClientPhone(phone));
+const long={...data,scope:'á&\n'.repeat(333)+'z'};
+assert.equal(new URL(createWhatsAppUrl('18496520907',long)).searchParams.get('text'),buildQuoteMessage(long));
+console.log('PASS: destino, campos completos, acentos/símbolos, fechas, opcionales, mensaje largo y validación de teléfono. Sin transmisión externa.');

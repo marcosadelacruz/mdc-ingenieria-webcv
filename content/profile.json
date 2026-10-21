@@ -1,0 +1,18 @@
+{
+  "name": "Marcos Alejandro De La Cruz",
+  "email": "marcosadelacruz@gmail.com",
+  "phone": "+18496520907",
+  "linkedin": "https://www.linkedin.com/in/malejandrodelacruz/",
+  "services": [
+    {"title":"Ingeniería de detalle","body":"Diseño mecánico y revisión de planos de tanques y tuberías. Documentación técnica y coordinación con las necesidades de fabricación y montaje.","deliverables":"Planos · Especificaciones · Revisión técnica"},
+    {"title":"Gestión de ingeniería","body":"Coordinación de disciplinas, contratistas y proveedores. Seguimiento de entregables y cambios para mantener alineados el diseño y la ejecución.","deliverables":"Matriz de entregables · Coordinación técnica · Control de cambios"},
+    {"title":"Planificación y control","body":"Estructura WBS, cronogramas en MS Project, análisis de ruta crítica, curvas S e indicadores de valor ganado para identificar desviaciones y apoyar decisiones.","deliverables":"Cronograma · Curvas S · Reportes ejecutivos"},
+    {"title":"Calidad y soporte en campo","body":"Revisión de cumplimiento de planos y especificaciones, seguimiento de inspecciones y apoyo a la resolución de consultas técnicas durante la construcción.","deliverables":"Inspecciones · Trazabilidad · Informes técnicos"}
+  ],
+  "experience": [
+    {"company":"ALSTOM","role":"Project Planning Engineer","context":"Monorriel de Santiago de los Caballeros","body":"Cronogramas, ruta crítica, consolidación de avances, asignación de recursos y reportes de desempeño para la toma de decisiones."},
+    {"company":"BARRICK GOLD","role":"Mechanical Project Engineer","context":"Mine Optimization Projects · 2024—2025","body":"Diseño y planificación de proyectos en operación minera, coordinación de contratistas y seguimiento técnico de la ejecución."},
+    {"company":"SISI ENGINEERING","role":"Site Project Manager","context":"Modular distillation train · 2023—2024","body":"Supervisión de ingeniería de detalle y montaje mecánico. Revisión de planos de tanques y tuberías, materiales, calidad y programación."},
+    {"company":"BARRICK GOLD","role":"Project Engineer · Quality Engineer","context":"Mine Expansion Project · 2019—2023","body":"Control de calidad, inspecciones, pruebas, cambios de diseño y coordinación con ingeniería de campo y proveedores."}
+  ]
+}
